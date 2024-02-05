@@ -12,12 +12,38 @@ export default {
 </script>
 
 <template>
-    <div class="card text-center">
-        <img :src="image" :alt="name" class="image-fluid rounded-circle">
-        <h4>{{ number }}</h4>
-        <h2>{{ name }}</h2>
-        <h3>{{ type }}</h3>
+    <div class="card text-center p-3">
+        <img :src="image" :alt="name" class="rounded-circle">
+        <h5>{{ number }}</h5>
+        <h2 class="fs-5">{{ name }}</h2>
+        <h5 class="m-0">{{ type }}</h5>
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 225px;
+    background-color: #eeeeee;
+
+    img {
+        max-width: 100%;
+        max-height: 50%;
+        display: block;
+        margin-bottom: 10px;
+        flex-basis: 70%;
+        flex-grow: 1;
+    }
+
+    * {
+        cursor: pointer;
+    }
+
+    h5 {
+        font-style: italic;
+        font-weight: 400;
+    }
+}
+</style>

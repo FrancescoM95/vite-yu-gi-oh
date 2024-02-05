@@ -11,7 +11,6 @@ export default {
     created() {
         axios.get(endpoint).then(res => {
             this.characters = res.data.docs;
-            console.log(this.characters);
         })
     }
 }
@@ -21,6 +20,10 @@ export default {
     <AppMain :characters="characters" />
 </template>
 
-<style lang="scss" scoped>
-@use './assets/scss/style.scss' as *
+<style lang="scss">
+@use './assets/scss/style.scss' as *;
+
+body {
+    background-color: #DB3C36;
+}
 </style>
