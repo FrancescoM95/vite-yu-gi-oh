@@ -1,11 +1,12 @@
 <script >
+import { store } from '../../data/store'
 import CharactersCard from './CharactersCard.vue';
 export default {
     name: 'CharactersList',
-    components: { CharactersCard, CharactersCard },
-    props: {
-        characters: Array
-    }
+    data: () => ({
+        store
+    }),
+    components: { CharactersCard },
 }
 </script>
 
@@ -13,7 +14,7 @@ export default {
     <section id="characters-list">
         <div class="container">
             <div class="row row-cols-5 g-4">
-                <div class="col" v-for="character in characters" :key="character.id">
+                <div class="col" v-for="character in store.characters" :key="character.id">
                     <CharactersCard :name="character.name" :image="character.imageUrl" :number="character.number"
                         :type="character.type1" />
                 </div>

@@ -1,23 +1,21 @@
 <script >
 import axios from 'axios';
-const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=30'
+import { store } from './data/store';
+const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=192'
 import AppMain from './components/AppMain.vue'
 export default {
     name: 'Pokévuex',
-    data: () => ({
-        characters: []
-    }),
     components: { AppMain },
     created() {
         axios.get(endpoint).then(res => {
-            this.characters = res.data.docs;
+            store.characters = res.data.docs;
         })
     }
 }
 </script>
 
 <template>
-    <AppMain :characters="characters" />
+    <AppMain />
 </template>
 
 <style lang="scss">
