@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 #characters-list {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 130px);
     overflow-y: auto;
     border: 20px solid #CCD0CF;
     border-radius: 20px;
