@@ -1,7 +1,7 @@
 <script >
 import axios from 'axios';
 import { store } from './data/store';
-const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?'
+const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=1000'
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue'
 
@@ -31,8 +31,10 @@ export default {
 </script>
 
 <template>
-    <AppHeader @type-change="changeType" />
-    <AppMain />
+    <div class="container">
+        <AppHeader @type-change="changeType" />
+        <AppMain />
+    </div>
 </template>
 
 <style lang="scss">
